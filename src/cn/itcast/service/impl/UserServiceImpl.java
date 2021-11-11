@@ -39,6 +39,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User finUserByName(String name) {
+        return dao.findByName(name);
+    }
+
+    @Override
     public void updateUser(User user) {
         dao.update(user);
     }

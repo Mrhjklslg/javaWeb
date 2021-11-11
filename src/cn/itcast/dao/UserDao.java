@@ -21,6 +21,8 @@ public interface UserDao {
 
     User findById(int i);
 
+    User findByName(String name);
+
     void update(User user);
 
     /**

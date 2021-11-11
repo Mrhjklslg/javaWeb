@@ -91,24 +91,60 @@
 
     <div style="float: left;">
 
-        <form class="form-inline clearfix" style="float: left" action="${pageContext.request.contextPath}/findUserByPageServlet" method="post">
+        <form class="form-inline clearfix" target="_parent" style="float: left" action="${pageContext.request.contextPath}/findUserByPageServlet" method="post">
             <div class="form-group">
                 <label for="exampleInputName2">姓名</label>
                 <input type="text" name="name" value="${condition.name[0]}" class="form-control" id="exampleInputName2" >
             </div>
             <div class="form-group">
-                <label for="exampleInputName3">籍贯</label>
-                <input type="text" name="address" value="${condition.address[0]}" class="form-control" id="exampleInputName3" >
+                    <label for="address" id="exampleInputName3">籍贯：</label>
+                    <select name="address" class="form-control" id="address">
+                        <option value ="请选择市区">请选择省份</option>
+                        <option value ="北京市">北京市</option>
+                        <option value ="天津市">天津市</option>
+                        <option value ="上海市">上海市</option>
+                        <option value ="重庆市">重庆市</option>
+                        <option value ="河北省">河北省</option>
+                        <option value ="山西省">山西省</option>
+                        <option value ="辽宁省">辽宁省</option>
+                        <option value ="吉林省">吉林省</option>
+                        <option value ="黑龙江省">黑龙江省</option>
+                        <option value ="江苏省">江苏省</option>
+                        <option value ="浙江省">浙江省</option>
+                        <option value ="安徽省">安徽省</option>
+                        <option value ="福建省">福建省</option>
+                        <option value ="江西省">江西省</option>
+                        <option value ="山东省">山东省</option>
+                        <option value ="河南省">河南省</option>
+                        <option value ="湖北省">湖北省</option>
+                        <option value ="湖南省">湖南省</option>
+                        <option value ="广东省">广东省</option>
+                        <option value ="海南省">海南省</option>
+                        <option value ="四川省">四川省</option>
+                        <option value ="贵州省">贵州省</option>
+                        <option value ="云南省">云南省</option>
+                        <option value ="陕西省">陕西省</option>
+                        <option value ="甘肃省">甘肃省</option>
+                        <option value ="青海省">青海省</option>
+                        <option value ="台湾省">台湾省</option>
+                        <option value ="广西壮族自治区">广西壮族自治区</option>
+                        <option value ="内蒙古自治区">内蒙古自治区</option>
+                        <option value ="西藏自治区">西藏自治区</option>
+                        <option value ="宁夏回族自治区">宁夏回族自治区 </option>
+                        <option value ="新疆维吾尔自治区">新疆维吾尔自治区</option>
+                        <option value ="香港特别行政区">香港特别行政区</option>
+                        <option value ="澳门特别行政区">澳门特别行政区</option>
+                    </select>
             </div>
 
             <div class="form-group">
                 <label for="exampleInputEmail2">邮箱</label>
                 <input type="text" name="email" value="${condition.email[0]}" class="form-control" id="exampleInputEmail2"  >
             </div>
-            <button type="submit" class="btn btn-default">查询</button>
+            <button type="submit" class="btn btn-primary">查询</button>
 
         </form>
-        <button type="submit" id="btn" class="btn btn-default">显示全部</button>
+        <button  id="btn" class="btn btn-primary" style="margin-left: 5px">显示全部</button>
 
 
     </div>
@@ -143,8 +179,8 @@
                 <td>${user.address}</td>
                 <td>${user.qq}</td>
                 <td>${user.email}</td>
-                <td><a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/findUserServlet?id=${user.id}">修改</a>&nbsp;
-                    <a class="btn btn-default btn-sm" href="javascript:deleteUser(${user.id});">删除</a></td>
+                <td><a class="btn  btn-primary btn-sm" href="${pageContext.request.contextPath}/findUserServlet?id=${user.id}">修改</a>&nbsp;
+                    <a class="btn  btn-danger btn-sm" href="javascript:deleteUser(${user.id});">删除</a></td>
             </tr>
 
         </c:forEach>
@@ -191,16 +227,9 @@
                 <span style="font-size: 25px;margin-left: 5px;">
                     共${pb.totalCount}条记录，共${pb.totalPage}页
                 </span>
-
             </ul>
         </nav>
-
-
     </div>
-
-
 </div>
-
-
 </body>
 </html>

@@ -45,6 +45,13 @@ public interface UserService {
     User findUserById(String id);
 
     /**
+     * 根据name查询
+     * @param name
+     * @return
+     */
+    User finUserByName(String name);
+
+    /**
      * 修改用户信息
      * @param user
      */

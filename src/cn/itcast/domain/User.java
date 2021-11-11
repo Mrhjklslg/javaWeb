@@ -8,8 +8,6 @@ public class User {
     private String address;
     private String qq;
     private String email;
-
-
     private String password;
 
     public String getName() {
@@ -87,7 +85,6 @@ public class User {
                 ", address='" + address + '\'' +
                 ", qq='" + qq + '\'' +
                 ", email='" + email + '\'' +
-                ", username='" + name + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }

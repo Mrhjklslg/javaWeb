@@ -41,9 +41,9 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void add(User user) {
         //1.定义sql
-        String sql = "insert into user values(null,?,?,?,?,?,?,null)";
+        String sql = "insert into user values(null,?,?,?,?,?,?,?)";
         //2.执行sql
-        template.update(sql, user.getName(), user.getGender(), user.getAge(), user.getAddress(), user.getQq(), user.getEmail());
+        template.update(sql, user.getName(), user.getGender(), user.getAge(), user.getAddress(), user.getQq(), user.getEmail(),user.getPassword());
     }
 
     @Override
@@ -58,6 +58,19 @@ public class UserDaoImpl implements UserDao {
     public User findById(int id) {
         String sql = "select * from user where id = ?";
         return template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), id);
+    }
+
+    @Override
+    public User findByName(String name) {
+       try {
+           String sql = "select * from user where name = ?";
+           User user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), name);
+           return user;
+       }catch (Exception e){
+           e.printStackTrace();
+           return null;
+       }
+
     }
 
     @Override

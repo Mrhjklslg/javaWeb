@@ -22,7 +22,10 @@
 
             //2.设置其src属性，加时间戳
             vcode.src = "${pageContext.request.contextPath}/checkCodeServlet?time="+new Date().getTime();
+
+
         }
+
     </script>
 </head>
 <body>
@@ -50,6 +53,8 @@
         <div class="form-group" style="text-align: center;">
             <input class="btn btn btn-primary" type="submit" value="登录">
         </div>
+
+
     </form>
 
     <!-- 出错显示的信息框 -->
