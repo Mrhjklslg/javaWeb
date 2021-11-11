@@ -55,6 +55,7 @@ public class LoginServlet extends HttpServlet {
         //5.调用Service查询
         UserService service = new UserServiceImpl();
         User loginUser = service.login(user);
+        System.out.println(loginUser);
         //6.判断是否登录成功
         if(loginUser != null){
             //登录成功

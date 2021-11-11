@@ -9,15 +9,15 @@ public class User {
     private String qq;
     private String email;
 
-    private String username;
+
     private String password;
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -36,13 +36,6 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getGender() {
         return gender;
@@ -94,8 +87,10 @@ public class User {
                 ", address='" + address + '\'' +
                 ", qq='" + qq + '\'' +
                 ", email='" + email + '\'' +
-                ", username='" + username + '\'' +
+                ", username='" + name + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
+
+
 }

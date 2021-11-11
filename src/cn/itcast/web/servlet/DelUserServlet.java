@@ -21,7 +21,7 @@ public class DelUserServlet extends HttpServlet {
         service.deleteUser(id);
 
         //3.跳转到查询所有Servlet
-        response.sendRedirect(request.getContextPath()+"/userListServlet");
+        response.sendRedirect(request.getContextPath()+"/findUserByPageServlet");
     }
 
     @Override

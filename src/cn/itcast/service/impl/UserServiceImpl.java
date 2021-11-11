@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User login(User user) {
-        return dao.findUserByUsernameAndPassword(user.getUsername(),user.getPassword());
+        return dao.findUserByUsernameAndPassword(user.getName(),user.getPassword());
     }
 
     @Override
@@ -77,6 +77,7 @@ public class UserServiceImpl implements UserService {
         //计算开始的记录索引
         int start = (currentPage - 1) * rows;
         List<User> list = dao.findByPage(start,rows,condition);
+        System.out.println(list);
         pb.setList(list);
 
         //5.计算总页码
