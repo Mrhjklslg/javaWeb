@@ -75,6 +75,10 @@
 
             }
 
+            document.getElementById("btn").onclick = function () {
+                location.href ="${pageContext.request.contextPath}/findUserByPageServlet";
+            }
+
 
         }
 
@@ -87,7 +91,7 @@
 
     <div style="float: left;">
 
-        <form class="form-inline" action="${pageContext.request.contextPath}/findUserByPageServlet" method="post">
+        <form class="form-inline clearfix" style="float: left" action="${pageContext.request.contextPath}/findUserByPageServlet" method="post">
             <div class="form-group">
                 <label for="exampleInputName2">姓名</label>
                 <input type="text" name="name" value="${condition.name[0]}" class="form-control" id="exampleInputName2" >
@@ -102,7 +106,10 @@
                 <input type="text" name="email" value="${condition.email[0]}" class="form-control" id="exampleInputEmail2"  >
             </div>
             <button type="submit" class="btn btn-default">查询</button>
+
         </form>
+        <button type="submit" id="btn" class="btn btn-default">显示全部</button>
+
 
     </div>
 

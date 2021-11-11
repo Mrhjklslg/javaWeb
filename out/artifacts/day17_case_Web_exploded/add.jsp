@@ -23,6 +23,7 @@
     <!-- 3. 导入bootstrap的js文件 -->
     <script src="js/bootstrap.min.js"></script>
 </head>
+
 <body>
 <div class="container">
     <center><h3>添加联系人页面</h3></center>
@@ -65,7 +66,7 @@
         <div class="form-group" style="text-align: center">
             <input class="btn btn-primary" type="submit" value="提交" />
             <input class="btn btn-default" type="reset" value="重置" />
-            <input class="btn btn-default" type="button" value="返回" />
+            <input class="btn btn-default" type="button"  onClick="javascript :history.go(-1)" value="返回" />
         </div>
     </form>
 </div>
